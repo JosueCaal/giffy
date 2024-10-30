@@ -1,5 +1,5 @@
 .Gif{
-    border: 1px solid #eee;
+    border: 1px solid #fff;
     color: #fff;
     border-radius: 10px;
     display: flex;
@@ -9,9 +9,11 @@
     width: 100%;
     text-decoration: none;
 }
-.Gif
+
 .Gif img{
     object-fit: contain;
+    width: 80%;
+    height: 80%;
 }
 .Gifh4{
     margin: 0;
