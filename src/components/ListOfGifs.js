@@ -1,21 +1,34 @@
 import React, {useEffect,useState}from "react";
 import Gif from "./Gif";
 import getGifs from "../services/getGif";
+import { logRoles } from "@testing-library/react";
 
-export default function ListOfGifs({keyword}){
+export default function ListOfGifs({params}){
+
+  const {keyword} = params
     
-    const [gifs, setGifs] = useState([])
+  const [gifs, setGifs] = useState([])
     
     useEffect(function(){
-        getGifs({keyword}).then(gifs => setGifs(gifs))
-      },[keyword])
 
-    return gifs.map(singleGif =>
+      getGifs({keyword})
+      .then(gifs => 
+        setGifs(gifs) 
+      )
+    },[keyword])
+
+  
+  
+  return <div>
+    {
+      gifs.map(singleGif =>
         <Gif 
           key={singleGif.id}
           id={singleGif.id}
-         title={singleGif.title} 
-         url={singleGif.url} 
+          title={singleGif.title} 
+          url={singleGif.url} 
         />
-    )
+      )
+    }
+  </div>
 }
