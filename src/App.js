@@ -13,7 +13,9 @@ function App() {
   return (
     <div className="App">
       <section className="App-content">
-
+        <Link to="/">
+          <img className='App-logo' alt='giffy-logo' src='./logogiff.png'/>
+        </Link>
         <Route 
           component={Home}
           path="/" />
